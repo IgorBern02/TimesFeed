@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+/* cria uma variante de dark mode que responde à classe .dark */
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  @apply bg-gray-50 text-gray-900 transition-colors duration-300;
+}
+
+.dark body {
+  @apply bg-gray-900 text-white;
+}
+
+/* tema principal */
+@theme {
+  --color-primary: #1e40af; /* azul */
+  --color-secondary: #9333ea; /* roxo */
+  --color-accent: #f97316; /* laranja */
+}

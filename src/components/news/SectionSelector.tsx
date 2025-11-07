@@ -1,4 +1,4 @@
-import type { SectionSelectorProps } from "../types/news/news";
+import type { SectionSelectorProps } from "../../types/news/news";
 
 export function SectionSelector({ value, onChange }: SectionSelectorProps) {
   const sections = ["technology", "world", "science", "arts"];
