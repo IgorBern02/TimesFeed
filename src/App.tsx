@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="min-h-screen dark:text-white transition-colors duration-300">
       <header>
-        <Header />
+        <Header dark={dark} />
       </header>
 
       <section className="mt-20 flex flex-col items-center">

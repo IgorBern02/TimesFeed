@@ -2,10 +2,7 @@
 import MoonIcon from "../../assets/icons/moon.png";
 import SunIcon from "../../assets/icons/sun.png";
 
-interface ThemeToggleProps {
-  dark: boolean;
-  onToggle: () => void;
-}
+import type { ThemeToggleProps } from "../../types/theme/theme";
 
 export function ThemeToggle({ dark, onToggle }: ThemeToggleProps) {
   return (
