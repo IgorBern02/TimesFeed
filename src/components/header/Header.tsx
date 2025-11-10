@@ -2,9 +2,7 @@
 import { MenuHamburguer } from "../menuHamburguer/menuHamburguer";
 import { ThemeToggle } from "../theme/ThemeToggle";
 import type { HeaderProps } from "../../types/header/header";
-import XIcon from "../../assets/icons/xIcon.svg";
-import InstagramIcon from "../../assets/icons/instagramIcon.svg";
-import EmailIcon from "../../assets/icons/emailIcon.svg";
+import { contactIcons } from "../../data/contactIconsHeader";
 import SearchIcon from "../../assets/icons/search.svg";
 
 export function Header({ dark, onToggle }: HeaderProps) {
@@ -15,8 +13,6 @@ export function Header({ dark, onToggle }: HeaderProps) {
     month: "long",
     year: "numeric",
   });
-
-  const contactIcons = [InstagramIcon, XIcon, EmailIcon];
 
   return (
     <header className="text-black dark:text-white fixed top-0 w-full z-10 flex flex-col items-center justify-between backdrop-blur-xl">
@@ -45,8 +41,16 @@ export function Header({ dark, onToggle }: HeaderProps) {
         </p>
 
         <div className="flex flex-row items-center justify-between gap-2 border mt-6 w-4/5 p-1 rounded-lg">
-          <img src={SearchIcon} alt="Search" className="w-5 h-5" />
-          <input type="text" className="w-full outline-0 text-base" />
+          <img
+            src={SearchIcon}
+            className={`w-5 h-5 ${dark ? "invert" : ""}`}
+            alt="menu"
+          />
+          <input
+            placeholder="Search notice"
+            type="text"
+            className="w-full outline-0 text-base text-black dark:text-white"
+          />
         </div>
 
         {/* Ícones sociais */}
@@ -55,8 +59,10 @@ export function Header({ dark, onToggle }: HeaderProps) {
             <li key={index} className="border p-2 rounded-full">
               <img
                 src={icon}
+                className={`w-4 h-4 cursor-pointer transition ${
+                  dark ? "invert" : ""
+                }`}
                 alt="social icon"
-                className="w-4 h-4 cursor-pointer transition"
               />
             </li>
           ))}
