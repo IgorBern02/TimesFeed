@@ -1,22 +1,23 @@
-// src/components/news/NewsCard.tsx
-import type { Article } from "../../types/news/news";
+import type { Article } from "../types/news";
 
 interface NewsCardProps {
   article: Article;
-  compact?: boolean; // se true, usa altura menor
+  compact?: boolean;
 }
 
 export const NewsCard = ({ article, compact = false }: NewsCardProps) => {
+  const hasImage = Boolean(article.multimedia?.[0]?.url);
+
   return (
     <a
       href={article.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="block border-b pb-2 hover:opacity-80 transition "
+      className="block border-b pb-2 hover:opacity-80 transition"
     >
-      {article.multimedia?.[0]?.url && (
+      {hasImage && (
         <img
-          src={article.multimedia[0].url}
+          src={article.multimedia![0].url}
           alt={article.title}
           className={`w-full object-cover mb-2 rounded ${
             compact ? "h-32" : "h-48"

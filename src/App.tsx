@@ -1,10 +1,13 @@
 // App.tsx
 import { useState } from "react";
-import { Header } from "./components/header/Header";
-import { Nav } from "./components/nav/Nav";
-import { useDarkMode } from "./components/header/hooks/useDarkMode";
+
 import { motion } from "framer-motion";
-import { NewsGrid } from "./components/news/NewsGrid";
+
+import { Header } from "./components/header/Header";
+import { Navbar } from "./components/navbar/Navbar";
+import { NewsGrid } from "./components/news/grid/NewsGrid";
+
+import { useDarkMode } from "./components/header/hooks/useDarkMode";
 
 function App() {
   const { dark, toggleDark } = useDarkMode();
@@ -23,7 +26,7 @@ function App() {
         }`}
       >
         <Header dark={dark} onToggle={toggleDark} />
-        <Nav section={section} onSelect={setSection} />
+        <Navbar section={section} onSelect={setSection} />
         <NewsGrid section={section} />
       </div>
     </motion.div>
