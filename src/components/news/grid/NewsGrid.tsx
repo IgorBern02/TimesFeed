@@ -1,6 +1,5 @@
 import { useNews } from "../hooks/useNews";
-import { MainNewsCard } from "../cards/MainNewsCard";
-import { NewsCard } from "../cards/NewsCard";
+import { MainNewsCard, NewsCard } from "../cards";
 import { NewsSkeleton } from "../skeleton/NewsSkeleton";
 import type { NewsGridProps } from "../types/news";
 

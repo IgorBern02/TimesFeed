@@ -23,7 +23,6 @@ export const MainNewsCard = ({ article }: { article: Article }) => {
       <p className="text-xs text-gray-500 lg:text-sm lg:text-gray-700 dark:text-gray-300 mb-2 line-clamp-3">
         {article.abstract}
       </p>
-      <p className="hidden lg:flex text-xs text-gray-500">{article.byline}</p>
     </a>
   );
 };

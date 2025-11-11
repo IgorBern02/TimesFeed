@@ -1,6 +1,6 @@
 const sectionsArray: string[] = [
   "arts",
-  "world",
+  "fashion",
   "movies",
   "health",
   "travel",
