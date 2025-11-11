@@ -45,16 +45,16 @@ export function MenuHamburguer({ dark }: MenuHamburguerProps) {
 
         <nav className="h-screen bg-white dark:bg-gray-900 flex flex-col justify-center items-center gap-6 text-lg font-medium text-gray-700 dark:text-gray-200 z-10 ">
           <a href="#" onClick={toggleMenu} className="hover:text-red-500">
-            Início
+            Home
           </a>
           <a href="#" onClick={toggleMenu} className="hover:text-red-500">
-            Notícias
+            News
           </a>
           <a href="#" onClick={toggleMenu} className="hover:text-red-500">
-            Sobre
+            About
           </a>
           <a href="#" onClick={toggleMenu} className="hover:text-red-500">
-            Contato
+            Contact
           </a>
         </nav>
       </div>

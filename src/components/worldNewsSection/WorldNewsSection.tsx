@@ -1,24 +1,30 @@
-// import { NewsCard, useNews, type NewsGridProps } from "../news";
+import { NewsCard, useNews, type NewsGridProps } from "../news";
 
-export function WorldNewsSection() {
-  //   const { articles } = useNews(section);
+export function WorldNewsSection({ section }: NewsGridProps) {
+  const { articles } = useNews(section);
 
-  //   const left = articles.slice(1, 4);
+  // Pegando as 4 primeiras notícias (igual ao layout)
+  const news = [...articles].sort(() => Math.random() - 0.5).slice(0, 4);
+
   return (
-    <div className="world-news-section ">
-      <div className="w-full flex flex-col items-center justify-center border-b-2 p-2">
-        <section className="w-full flex items-center justify-center p-2">
-          <h1 className="font-bebasneue text-6xl font-bold ">World News</h1>
-        </section>
+    <section className="w-full mt-8 world-news-section">
+      {/* Header da Seção */}
+      <div className="flex flex-col items-center justify-between border-b-2 pb-3 mb-6">
+        <h2 className="font-bebasneue text-7xl font-bold uppercase tracking-wide">
+          World News
+        </h2>
 
-        <section className="p-1">
-          <p className="text-sm font-merriweather uppercase">view all</p>
-        </section>
+        <button className="text-xs font-merriweather uppercase mt-5 hover:text-red-600 transition-colors duration-200 cursor-pointer">
+          View All
+        </button>
       </div>
 
-      {/* {left.map((a) => (
-        <NewsCard key={a.url} article={a} compact />
-      ))} */}
-    </div>
+      {/* Grade das notícias */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto p-4">
+        {news.map((article) => (
+          <NewsCard key={article.url} article={article} compact />
+        ))}
+      </div>
+    </section>
   );
 }

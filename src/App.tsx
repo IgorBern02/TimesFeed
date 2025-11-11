@@ -12,7 +12,7 @@ import { WorldNewsSection } from "./components/worldNewsSection/WorldNewsSection
 
 function App() {
   const { dark, toggleDark } = useDarkMode();
-  const [section, setSection] = useState("technology");
+  const [section, setSection] = useState("arts");
 
   return (
     <motion.div
@@ -29,7 +29,7 @@ function App() {
         <Header dark={dark} onToggle={toggleDark} />
         <Navbar section={section} onSelect={setSection} />
         <NewsGrid section={section} />
-        <WorldNewsSection />
+        <WorldNewsSection section="world" />
       </div>
     </motion.div>
   );

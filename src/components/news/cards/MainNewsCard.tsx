@@ -14,7 +14,7 @@ export const MainNewsCard = ({ article }: { article: Article }) => {
         <img
           src={article.multimedia![0].url}
           alt={article.title}
-          className="w-full h-32 lg:h-80 object-cover mb-2 lg:mb-4 rounded"
+          className="w-full h-44 lg:h-80 object-cover mb-2 lg:mb-4 rounded"
         />
       )}
       <h2 className="text-sm font-semibold line-clamp-2 lg:text-2xl lg:font-bold mb-2">

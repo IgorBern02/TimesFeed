@@ -5,7 +5,7 @@ interface NewsCardProps {
   compact?: boolean;
 }
 
-export const NewsCard = ({ article, compact = false }: NewsCardProps) => {
+export const NewsCard = ({ article }: NewsCardProps) => {
   const hasImage = Boolean(article.multimedia?.[0]?.url);
 
   return (
@@ -19,9 +19,7 @@ export const NewsCard = ({ article, compact = false }: NewsCardProps) => {
         <img
           src={article.multimedia![0].url}
           alt={article.title}
-          className={`w-full object-cover mb-2 rounded ${
-            compact ? "h-32" : "h-48"
-          }`}
+          className="w-full object-cover mb-2 rounded h-44"
         />
       )}
       <h3 className="text-sm font-semibold line-clamp-2">{article.title}</h3>
