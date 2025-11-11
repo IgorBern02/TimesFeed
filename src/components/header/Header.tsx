@@ -1,5 +1,5 @@
 // Header.tsx
-import { MenuHamburguer } from "../menuHamburguer/menuHamburguer";
+import { MenuHamburguer } from "./menuHamburguer/menuHamburguer";
 import { ThemeToggle } from "../theme/ThemeToggle";
 import type { HeaderProps } from "../../types/header/header";
 import { contactIcons } from "../../data/contactIconsHeader";
@@ -15,9 +15,9 @@ export function Header({ dark, onToggle }: HeaderProps) {
   });
 
   return (
-    <header className="text-black dark:text-white fixed top-0 w-full z-10 flex flex-col items-center justify-between backdrop-blur-xl">
+    <header className="text-black dark:text-white  w-full flex flex-col items-center justify-between ">
       {/* Linha superior */}
-      <div className="w-full flex flex-row justify-between items-center px-3 py-2 border-b">
+      <div className="w-full fixed top-0 z-10 backdrop-blur-xl flex flex-row justify-between items-center px-3 py-2 border-b">
         <section>
           <p className="text-sm font-merriweather">
             Today:{" "}
@@ -32,7 +32,7 @@ export function Header({ dark, onToggle }: HeaderProps) {
       </div>
 
       {/* Título e subtítulo */}
-      <div className="w-full flex flex-col justify-center items-center py-5 border-b ">
+      <div className="w-full mt-15 flex flex-col justify-center items-center py-5 border-b ">
         <h1 className="font-bebasneue text-5xl font-bold ">
           TimesFeed Newspaper
         </h1>

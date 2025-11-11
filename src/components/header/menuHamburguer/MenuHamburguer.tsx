@@ -1,6 +1,6 @@
 import { useState } from "react";
-import menuIcon from "../../assets/icons/menuIcon.svg";
-import closeIcon from "../../assets/icons/closeIcon.svg";
+import menuIcon from "../../../assets/icons/menuIcon.svg";
+import closeIcon from "../../../assets/icons/closeIcon.svg";
 interface MenuHamburguerProps {
   dark: boolean;
 }
