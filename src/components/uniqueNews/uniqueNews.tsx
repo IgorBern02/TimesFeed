@@ -1,6 +1,6 @@
 import { NewsCard, useNews, type NewsGridProps } from "../news";
 
-export function WorldNewsSection({ section }: NewsGridProps) {
+export function UniqueNews({ section, text }: NewsGridProps) {
   const { articles } = useNews(section);
 
   // Pegando as 4 primeiras notícias (igual ao layout)
@@ -11,7 +11,7 @@ export function WorldNewsSection({ section }: NewsGridProps) {
       {/* Header da Seção */}
       <div className="flex flex-col items-center justify-between border-b-2 pb-3 mb-6">
         <h2 className="font-bebasneue text-7xl font-bold uppercase tracking-wide">
-          World News
+          {text}
         </h2>
 
         <button className="text-xs font-merriweather uppercase mt-5 hover:text-red-600 transition-colors duration-200 cursor-pointer">

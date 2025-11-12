@@ -8,7 +8,7 @@ import { Navbar } from "./components/navbar/Navbar";
 import { NewsGrid } from "./components/news/grid/NewsGrid";
 
 import { useDarkMode } from "./components/header/hooks/useDarkMode";
-import { WorldNewsSection } from "./components/worldNewsSection/WorldNewsSection";
+import { UniqueNews } from "./components/uniqueNews/uniqueNews";
 
 function App() {
   const { dark, toggleDark } = useDarkMode();
@@ -29,7 +29,9 @@ function App() {
         <Header dark={dark} onToggle={toggleDark} />
         <Navbar section={section} onSelect={setSection} />
         <NewsGrid section={section} />
-        <WorldNewsSection section="world" />
+        {/* <WorldNewsSection section="world" /> */}
+        <UniqueNews text="World News" section="world" />
+        <UniqueNews text="Technology" section="technology" />
       </div>
     </motion.div>
   );

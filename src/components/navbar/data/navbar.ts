@@ -4,7 +4,7 @@ const sectionsArray: string[] = [
   "movies",
   "health",
   "travel",
-  "technology",
+  "food",
 ];
 
 export default sectionsArray;

@@ -1,5 +1,6 @@
 export interface NewsGridProps {
   section: string;
+  text?: string;
 }
 
 export interface Article {
