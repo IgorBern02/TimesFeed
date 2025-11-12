@@ -1,11 +1,13 @@
 // src/services/api.ts
 const API_KEY = import.meta.env.VITE_NYT_API_KEY;
+const BASE_URL = import.meta.env.VITE_NYT_BASE_URL;
 
 export async function getTopStories(section: string) {
   try {
-    const res = await fetch(
-      `https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${API_KEY}`
-    );
+    const url = `${BASE_URL}/${section}.json?api-key=${API_KEY}`;
+
+    console.log("🔗 Fetching:", url); // <--- debug
+    const res = await fetch(url);
 
     if (!res.ok) {
       throw new Error(`Erro HTTP ${res.status}`);
@@ -13,13 +15,11 @@ export async function getTopStories(section: string) {
 
     const data = await res.json();
 
-    // Garante que há resultados antes de retornar
     if (!data?.results) {
       console.warn("Nenhum resultado encontrado:", data);
       return [];
     }
 
-    // Retorna só os 10 primeiros
     return data.results.slice(0, 10);
   } catch (err) {
     console.error("Erro ao buscar notícias:", err);

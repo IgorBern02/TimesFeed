@@ -1,24 +1,13 @@
-import { MenuHamburguer } from "./components/MenuHamburguer";
-import { ThemeToggle } from "./components/ThemeToggle";
 import { SearchBar } from "./components/SearchBar";
 import { SocialIcons } from "./components/SocialIcons";
-import { useHeaderDate } from "./hooks/useHeaderDate";
 import type { HeaderProps } from "./types/header";
+import { LineUpHeader } from "./components/LineUpHeader";
 
-export function Header({ dark, onToggle }: HeaderProps) {
-  const formattedDate = useHeaderDate();
-
+export function Header({ dark }: HeaderProps) {
   return (
     <header className="text-black dark:text-white w-full flex flex-col items-center">
       {/* Linha superior */}
-      <div className="w-full fixed top-0 z-10 backdrop-blur-xl flex justify-between items-center px-3 py-2 border-b">
-        <p className="text-sm font-merriweather">Today: {formattedDate}</p>
-
-        <div className="flex items-center gap-4">
-          <ThemeToggle dark={dark} onToggle={onToggle} />
-          <MenuHamburguer dark={dark} />
-        </div>
-      </div>
+      <LineUpHeader dark={dark} />
 
       {/* Título + subtítulo + busca + ícones */}
       <div className="w-full mt-16 flex flex-col items-center py-5 border-b">

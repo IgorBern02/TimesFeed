@@ -1,0 +1,39 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+
+import { Header } from "../components/header/Header";
+import { Navbar } from "../components/navbar/Navbar";
+import { NewsGrid } from "../components/news/grid/NewsGrid";
+
+import { useDarkMode } from "../components/header/hooks/useDarkMode";
+import { UniqueNews } from "../components/uniqueNews/uniqueNews";
+
+export const Home = () => {
+  const { dark, toggleDark } = useDarkMode();
+  const [section, setSection] = useState("arts");
+  return (
+    <div>
+      {" "}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="min-h-screen bg-white dark:bg-gray-900"
+      >
+        <div
+          className={`min-h-screen transition-colors duration-300  ${
+            dark ? "dark bg-gray-900 text-white" : "bg-white text-black"
+          }`}
+        >
+          <Header dark={dark} onToggle={toggleDark} />
+          <Navbar section={section} onSelect={setSection} />
+          <NewsGrid section={section} />
+          {/* <WorldNewsSection section="world" /> */}
+          <UniqueNews text="World News" section="world" dark={dark} />
+          <UniqueNews text="Technology" section="technology" dark={dark} />
+        </div>
+      </motion.div>
+      ;
+    </div>
+  );
+};

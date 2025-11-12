@@ -1,0 +1,26 @@
+{
+  "results": [
+    {
+      "title": "Sample Article 1",
+      "abstract": "This is a sample abstract for mock data.",
+      "url": "https://example.com/article1",
+      "multimedia": [
+        {
+          "url": "https://via.placeholder.com/400x250",
+          "format": "mediumThreeByTwo210"
+        }
+      ]
+    },
+    {
+      "title": "Sample Article 2",
+      "abstract": "Another example article to simulate NYT data.",
+      "url": "https://example.com/article2",
+      "multimedia": [
+        {
+          "url": "https://via.placeholder.com/400x250",
+          "format": "mediumThreeByTwo210"
+        }
+      ]
+    }
+  ]
+}

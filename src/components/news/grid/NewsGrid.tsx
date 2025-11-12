@@ -17,8 +17,9 @@ export const NewsGrid = ({ section }: NewsGridProps) => {
       </div>
     );
 
-  if (!articles.length)
-    return <p className="text-center mt-6">Nenhuma notícia encontrada 😕</p>;
+  if (!articles || articles.length === 0) {
+    return <p>Nenhuma notícia encontrada.</p>;
+  }
 
   const main = articles[0];
   const left = articles.slice(1, 4);
