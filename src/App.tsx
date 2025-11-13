@@ -22,7 +22,6 @@ export function App() {
             path="/news/:section"
             element={<AllNewsPage dark={dark} onToggle={onToggle} />}
           />
-          <Route path="/news" />
         </Routes>
       </div>
     </div>

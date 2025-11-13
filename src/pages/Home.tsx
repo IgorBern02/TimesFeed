@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "../components/navbar/Navbar";
 import { NewsGrid } from "../components/news/grid/NewsGrid";
 import { UniqueNews } from "../components/uniqueNews/uniqueNews";
+import { Footer } from "../components/footer/Footer";
 import type { HeaderProps } from "../components/header/types/header";
 
 export const HomePage = ({ dark }: HeaderProps) => {
@@ -21,6 +22,7 @@ export const HomePage = ({ dark }: HeaderProps) => {
       <NewsGrid section={section} />
       <UniqueNews text="World News" section="world" />
       <UniqueNews text="Technology" section="technology" />
+      <Footer />
     </motion.div>
   );
 };
